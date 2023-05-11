@@ -1,0 +1,59 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.11'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'arcus.app.common'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// https://mvnrepository.com/artifact/com.navercorp.arcus/arcus-java-client
+	implementation group: 'com.navercorp.arcus', name: 'arcus-java-client', version: '1.13.2'
+
+	// https://mvnrepository.com/artifact/net.sf.ehcache/ehcache-core
+	implementation group: 'net.sf.ehcache', name: 'ehcache-core', version: '2.6.0'
+
+	// https://mvnrepository.com/artifact/jline/jline
+	implementation group: 'jline', name: 'jline', version: '0.9.94'
+
+	// https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper
+	implementation group: 'org.apache.zookeeper', name: 'zookeeper', version: '3.5.9'
+
+	// https://mvnrepository.com/artifact/io.netty/netty
+	implementation group: 'io.netty', name: 'netty', version: '3.10.6.Final'
+
+	// https://mvnrepository.com/artifact/log4j/log4j
+	implementation group: 'log4j', name: 'log4j', version: '1.2.16'
+
+	// https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+	implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+
+	// https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12
+	testImplementation group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25'
+
+	// https://mvnrepository.com/artifact/org.aspectj/aspectjrt
+	runtimeOnly group: 'org.aspectj', name: 'aspectjrt', version: '1.7.3'
+
+	// https://mvnrepository.com/artifact/org.aspectj/aspectjweaver
+	runtimeOnly group: 'org.aspectj', name: 'aspectjweaver', version: '1.7.3'
+
+	// https://mvnrepository.com/artifact/commons-lang/commons-lang3
+	implementation group: 'commons-lang', name: 'commons-lang3', version: '3.0'
+
+	//arcus-app-common
+	implementation files('libs/arcus-app-common-2.0.1.jar')
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
