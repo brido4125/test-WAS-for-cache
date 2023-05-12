@@ -41,10 +41,10 @@ dependencies {
 	testImplementation group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25'
 
 	// https://mvnrepository.com/artifact/org.aspectj/aspectjrt
-	runtimeOnly group: 'org.aspectj', name: 'aspectjrt', version: '1.7.3'
+	implementation group: 'org.aspectj', name: 'aspectjrt', version: '1.7.3'
 
 	// https://mvnrepository.com/artifact/org.aspectj/aspectjweaver
-	runtimeOnly group: 'org.aspectj', name: 'aspectjweaver', version: '1.7.3'
+	implementation group: 'org.aspectj', name: 'aspectjweaver', version: '1.7.3'
 
 	// https://mvnrepository.com/artifact/commons-lang/commons-lang3
 	implementation group: 'commons-lang', name: 'commons-lang3', version: '3.0'
