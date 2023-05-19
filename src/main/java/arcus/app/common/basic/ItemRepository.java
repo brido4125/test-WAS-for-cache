@@ -16,7 +16,6 @@ public class ItemRepository {
 
     public Item findById(Long id) {
         Item item = store.get(id);
-        System.out.println("item = " + item.toString());
         return item;
     }
 }
