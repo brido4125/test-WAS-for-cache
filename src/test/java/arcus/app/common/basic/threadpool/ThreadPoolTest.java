@@ -1,13 +1,11 @@
 package arcus.app.common.basic.threadpool;
 
+import com.jam2in.arcus.app.common.recaching.ArcusRecachingTask;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.SynchronousQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -130,6 +128,71 @@ public class ThreadPoolTest {
         assertThat(threadPool.getPoolSize()).isEqualTo(3);
         assertThat(threadPool.getActiveCount()).isEqualTo(3);
     }
+
+    @Test
+    @DisplayName("Thread Pool 내부 Queue에 Task가 쌓이는 경우 - SynchronousQueue 성공 ")
+    void threadPoolTaskQueueTest() {
+        int numTasks = 60;
+        SynchronousQueue<Runnable> queue = new SynchronousQueue<Runnable>();
+        CountDownLatch latch = new CountDownLatch(numTasks);
+        ThreadPoolExecutor threadPool =
+                new ThreadPoolExecutor(10,
+                        numTasks, 10L,
+                        TimeUnit.SECONDS, queue);
+
+        for (int i = 0; i < numTasks; i++) {
+            threadPool.execute(() -> {
+                sleep(1000);
+                latch.countDown();
+            });
+        }
+
+        for(int i = 0; i < 120; i++){
+            sleep(500);
+            //현재 실행 중인 Thread의 수 출력
+            System.out.println("Active Thread: " + threadPool.getActiveCount());
+            //현재 존재하는 Thread 수 출력
+            System.out.println("Current Thread: " + threadPool.getPoolSize());
+            //Queue에서 대기 중인 작업 갯수 출력
+            System.out.println("Queue: " + queue.size());
+        }
+
+        threadPool.shutdown();
+    }
+
+    @Test
+    @DisplayName("Task가 무한으로 수행되는 경우, 주어진 time이 지나도 자동 종료되지 않는다.")
+    void testInfiniteTaskTest() {
+        ThreadPoolExecutor threadPool =
+                new ThreadPoolExecutor(CORE_THREAD_POOL_SIZE,
+                        MAXIMUM_THREAD_POOL_SIZE, 1L,
+                        TimeUnit.SECONDS, new SynchronousQueue<Runnable>());
+        for (int i = 0; i < CORE_THREAD_POOL_SIZE; i++) {
+            threadPool.execute(() -> {
+                while (!Thread.interrupted()) {
+                    System.out.println("Thread Name :  ing" + Thread.currentThread().getName());
+                    sleep(5000);
+                }
+            });
+        }
+
+        threadPool.execute(() -> {
+            while (!Thread.interrupted()) {
+                System.out.println("Thread Name :  ing" + Thread.currentThread().getName());
+                sleep(500);
+                if (threadPool.getPoolSize() > CORE_THREAD_POOL_SIZE) {
+                    break;
+                }
+            }
+            System.out.println("End Thread Name :  end " + Thread.currentThread().getName());
+        });
+
+        sleep(5000);
+
+        assertThat(threadPool.getPoolSize()).isEqualTo(CORE_THREAD_POOL_SIZE);
+        assertThat(threadPool.getActiveCount()).isEqualTo(CORE_THREAD_POOL_SIZE);
+    }
+
 
     private void sleep(long millis) {
         try {
