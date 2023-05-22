@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.util.concurrent.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class ThreadPoolTest {
 
@@ -133,7 +134,7 @@ public class ThreadPoolTest {
     @DisplayName("Thread Pool 내부 Queue에 Task가 쌓이는 경우 - SynchronousQueue 성공 ")
     void threadPoolTaskQueueTest() {
         int numTasks = 60;
-        SynchronousQueue<Runnable> queue = new SynchronousQueue<Runnable>();
+        SynchronousQueue<Runnable> queue = new SynchronousQueue<>();
         CountDownLatch latch = new CountDownLatch(numTasks);
         ThreadPoolExecutor threadPool =
                 new ThreadPoolExecutor(10,
@@ -155,7 +156,64 @@ public class ThreadPoolTest {
             System.out.println("Current Thread: " + threadPool.getPoolSize());
             //Queue에서 대기 중인 작업 갯수 출력
             System.out.println("Queue: " + queue.size());
+            System.out.println();
         }
+
+        threadPool.shutdown();
+    }
+
+    @Test
+    @DisplayName("SynchronousQueue - Task가 쌓이는 경우")
+    void synchronousQueueOfferTest() {
+        SynchronousQueue<Runnable> queue = new SynchronousQueue<>();
+        ThreadPoolExecutor threadPool =
+                new ThreadPoolExecutor(CORE_THREAD_POOL_SIZE,
+                        MAXIMUM_THREAD_POOL_SIZE, 10L,
+                        TimeUnit.SECONDS, queue);
+
+        for (int i = 0; i < MAXIMUM_THREAD_POOL_SIZE; i++) {
+            threadPool.execute(() -> {
+                sleep(100000);
+            });
+        }
+
+        assertThatThrownBy(() -> {
+            threadPool.execute(() -> {
+                sleep(10000);
+            });
+        }).isInstanceOf(RejectedExecutionException.class);
+    }
+
+    @Test
+    @DisplayName("Thread Pool 내부 Queue에 Task가 쌓이는 경우 -  LinkedBlockingQueue ")
+    void linkedBlockingQueueTest() {
+        int numTasks = 60;
+        LinkedBlockingQueue<Runnable> queue = new LinkedBlockingQueue<>();
+        CountDownLatch latch = new CountDownLatch(numTasks);
+        ThreadPoolExecutor threadPool =
+                new ThreadPoolExecutor(10,
+                        numTasks, 10L,
+                        TimeUnit.SECONDS, queue);
+
+        for (int i = 0; i < numTasks; i++) {
+            threadPool.execute(() -> {
+                sleep(1000);
+                latch.countDown();
+            });
+        }
+
+        for(int i = 0; i < 120; i++){
+            sleep(500);
+            //현재 실행 중인 Thread의 수 출력
+            System.out.println("Active Thread: " + threadPool.getActiveCount());
+            //현재 존재하는 Thread 수 출력
+            System.out.println("Current Thread: " + threadPool.getPoolSize());
+            //Queue에서 대기 중인 작업 갯수 출력
+            System.out.println("Queue: " + queue.size());
+            System.out.println();
+        }
+
+
 
         threadPool.shutdown();
     }
