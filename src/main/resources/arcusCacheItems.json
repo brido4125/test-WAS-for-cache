@@ -1,0 +1,6 @@
+[
+    {
+        "target":"arcus.app.common.basic.ItemService.findItem",
+        "keyParams":["*"]
+    }
+]

@@ -14,6 +14,7 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 	// https://mvnrepository.com/artifact/com.navercorp.arcus/arcus-java-client
@@ -46,8 +47,9 @@ dependencies {
 	// https://mvnrepository.com/artifact/org.aspectj/aspectjweaver
 	implementation group: 'org.aspectj', name: 'aspectjweaver', version: '1.7.3'
 
-	// https://mvnrepository.com/artifact/commons-lang/commons-lang3
-	implementation group: 'commons-lang', name: 'commons-lang3', version: '3.0'
+	// https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+	implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+
 
 	//arcus-app-common
 	implementation files('libs/arcus-app-common-2.0.1.jar')
