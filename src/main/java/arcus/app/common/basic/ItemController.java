@@ -12,9 +12,6 @@ public class ItemController {
 
     private final ItemService itemService;
 
-    @Value("${recaching}")
-    private boolean recaching;
-
     public ItemController(ItemService itemService) {
         this.itemService = itemService;
     }
@@ -28,11 +25,6 @@ public class ItemController {
 
     @GetMapping("/item/{id}")
     public String getItem(@PathVariable("id") Long id) {
-        if (recaching) {
-            Item itemWithRecaching = itemService.findItemWithRecaching(id);
-            System.out.println("itemWithRecaching = " + itemWithRecaching.toString());
-            return itemWithRecaching.getName();
-        }
         Item item = itemService.findItem(id);
         System.out.println("item = " + item.toString());
         return item.getName();
