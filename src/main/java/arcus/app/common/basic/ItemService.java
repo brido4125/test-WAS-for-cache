@@ -15,7 +15,7 @@ public class ItemService {
         this.itemRepository = itemRepository;
     }
 
-    @ArcusCache(keyDate = ArcusCacheKeyDate.KEY_DATE_DAY, expireTime = "10", recachingType = ArcusRecachingType.NONE)
+    @ArcusCache(keyDate = ArcusCacheKeyDate.KEY_DATE_DAY, expireTime = "10", recachingType = ArcusRecachingType.SUS)
     public Item findItem(@ArcusCacheKey Long id) {
         System.out.println("ItemService.findItem 로직 호출");
         Item find = itemRepository.findById(id);
