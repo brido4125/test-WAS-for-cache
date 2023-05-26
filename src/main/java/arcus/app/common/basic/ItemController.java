@@ -1,5 +1,6 @@
 package arcus.app.common.basic;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class ItemController {
 
     private final ItemService itemService;
+
+    @Value("${recaching}")
+    private boolean recaching;
 
     public ItemController(ItemService itemService) {
         this.itemService = itemService;
@@ -22,8 +26,8 @@ public class ItemController {
         return "data saved";
     }
 
-    @GetMapping("/item")
-    public String getItem(@RequestParam("id") Long id, @RequestParam("recaching") boolean recaching) {
+    @GetMapping("/item/{id}")
+    public String getItem(@PathVariable("id") Long id) {
         if (recaching) {
             Item itemWithRecaching = itemService.findItemWithRecaching(id);
             System.out.println("itemWithRecaching = " + itemWithRecaching.toString());

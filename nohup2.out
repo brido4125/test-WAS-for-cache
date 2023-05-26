@@ -1,0 +1,129 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.11)
+
+2023-05-26 15:23:04.374  INFO 12205 --- [           main] arcus.app.common.basic.BasicApplication  : Starting BasicApplication using Java 11.0.18 on jam2ins-MacBook-Pro.local with PID 12205 (/Users/jam2in/Desktop/projects/common-basic/build/libs/basic-0.0.1-SNAPSHOT.jar started by jam2in in /Users/jam2in/Desktop/projects/common-basic)
+2023-05-26 15:23:04.377  INFO 12205 --- [           main] arcus.app.common.basic.BasicApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-05-26 15:23:06.521  INFO 12205 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2023-05-26 15:23:06.540  INFO 12205 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-26 15:23:06.541  INFO 12205 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-26 15:23:06.677  INFO 12205 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-26 15:23:06.677  INFO 12205 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2217 ms
+2023-05-26 15:23:06.823  WARN 12205 --- [           main] c.j.a.a.c.client.ArcusClientWrapper      : Try to connect arcus server (address=127.0.0.1:2191, serviceCode=brido, poolSize=4, asyncOperationTimeout=700)
+2023-05-26 15:23:06.865  INFO 12205 --- [           main] net.spy.memcached.CacheManager           : Trying to connect to Arcus admin(brido@127.0.0.1:2191)
+2023-05-26 15:23:06.879  INFO 12205 --- [           main] org.apache.zookeeper.ZooKeeper           : Client environment:zookeeper.version=3.5.9-83df9301aa5c2a5d284a9940177808c01bc35cef, built on 01/06/2021 20:03 GMT
+2023-05-26 15:23:06.879  INFO 12205 --- [           main] org.apache.zookeeper.ZooKeeper           : Client environment:host.name=218.38.137.27
+2023-05-26 15:23:06.879  INFO 12205 --- [           main] org.apache.zookeeper.ZooKeeper           : Client environment:java.version=11.0.18
+2023-05-26 15:23:06.879  INFO 12205 --- [           main] org.apache.zookeeper.ZooKeeper           : Client environment:java.vendor=Amazon.com Inc.
+2023-05-26 15:23:06.879  INFO 12205 --- [           main] org.apache.zookeeper.ZooKeeper           : Client environment:java.home=/Users/jam2in/Library/Java/JavaVirtualMachines/corretto-11.0.18/Contents/Home
+2023-05-26 15:23:06.879  INFO 12205 --- [           main] org.apache.zookeeper.ZooKeeper           : Client environment:java.class.path=build/libs/basic-0.0.1-SNAPSHOT.jar
+2023-05-26 15:23:06.879  INFO 12205 --- [           main] org.apache.zookeeper.ZooKeeper           : Client environment:java.library.path=/Users/jam2in/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+2023-05-26 15:23:06.879  INFO 12205 --- [           main] org.apache.zookeeper.ZooKeeper           : Client environment:java.io.tmpdir=/var/folders/1b/tjl5cfbd5pg2xy4pby4rs78c0000gn/T/
+2023-05-26 15:23:06.879  INFO 12205 --- [           main] org.apache.zookeeper.ZooKeeper           : Client environment:java.compiler=<NA>
+2023-05-26 15:23:06.879  INFO 12205 --- [           main] org.apache.zookeeper.ZooKeeper           : Client environment:os.name=Mac OS X
+2023-05-26 15:23:06.879  INFO 12205 --- [           main] org.apache.zookeeper.ZooKeeper           : Client environment:os.arch=x86_64
+2023-05-26 15:23:06.879  INFO 12205 --- [           main] org.apache.zookeeper.ZooKeeper           : Client environment:os.version=12.6.1
+2023-05-26 15:23:06.879  INFO 12205 --- [           main] org.apache.zookeeper.ZooKeeper           : Client environment:user.name=jam2in
+2023-05-26 15:23:06.879  INFO 12205 --- [           main] org.apache.zookeeper.ZooKeeper           : Client environment:user.home=/Users/jam2in
+2023-05-26 15:23:06.879  INFO 12205 --- [           main] org.apache.zookeeper.ZooKeeper           : Client environment:user.dir=/Users/jam2in/Desktop/projects/common-basic
+2023-05-26 15:23:06.879  INFO 12205 --- [           main] org.apache.zookeeper.ZooKeeper           : Client environment:os.memory.free=225MB
+2023-05-26 15:23:06.879  INFO 12205 --- [           main] org.apache.zookeeper.ZooKeeper           : Client environment:os.memory.max=4096MB
+2023-05-26 15:23:06.879  INFO 12205 --- [           main] org.apache.zookeeper.ZooKeeper           : Client environment:os.memory.total=256MB
+2023-05-26 15:23:06.883  INFO 12205 --- [           main] org.apache.zookeeper.ZooKeeper           : Initiating client connection, connectString=127.0.0.1:2191 sessionTimeout=15000 watcher=Thread[Thread-1,5,main]
+2023-05-26 15:23:06.889  INFO 12205 --- [           main] org.apache.zookeeper.common.X509Util     : Setting -D jdk.tls.rejectClientInitiatedRenegotiation=true to disable client-initiated TLS renegotiation
+2023-05-26 15:23:06.896  INFO 12205 --- [           main] org.apache.zookeeper.ClientCnxnSocket    : jute.maxbuffer value is 4194304 Bytes
+2023-05-26 15:23:06.903  INFO 12205 --- [           main] org.apache.zookeeper.ClientCnxn          : zookeeper.request.timeout value is 0. feature enabled=
+2023-05-26 15:23:06.904  INFO 12205 --- [127.0.0.1:2191)] org.apache.zookeeper.ClientCnxn          : Opening socket connection to server /127.0.0.1:2191
+2023-05-26 15:23:06.914  INFO 12205 --- [127.0.0.1:2191)] org.apache.zookeeper.ClientCnxn          : Socket connection established, initiating session, client: /127.0.0.1:61598, server: /127.0.0.1:2191
+2023-05-26 15:23:06.925  INFO 12205 --- [127.0.0.1:2191)] org.apache.zookeeper.ClientCnxn          : Session establishment complete on server /127.0.0.1:2191, sessionid = 0x1000001fec50147, negotiated timeout = 15000
+2023-05-26 15:23:06.927  INFO 12205 --- [ain-EventThread] net.spy.memcached.CacheManager           : Connected to Arcus admin. (brido@127.0.0.1:2191)
+2023-05-26 15:23:06.937  INFO 12205 --- [           main] net.spy.memcached.CacheManager           : Connected to Arcus cluster (seriveCode=brido)
+2023-05-26 15:23:06.952  INFO 12205 --- [           main] net.spy.memcached.CacheMonitor           : Initializing the CacheMonitor.
+2023-05-26 15:23:06.953  INFO 12205 --- [           main] net.spy.memcached.CacheManager           : CacheManager started. (brido@127.0.0.1:2191)
+2023-05-26 15:23:06.957  WARN 12205 --- [ain-EventThread] net.spy.memcached.CacheManager           : Cache list has been changed : From=null, To=[127.0.0.1:11211-localhost], [serviceCode=brido, adminSessionId=0x1000001fec50147
+2023-05-26 15:23:06.971  INFO 12205 --- [ain-EventThread] net.spy.memcached.MemcachedConnection    : new memcached node added {QA name=ArcusClient(1-4) for brido /127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2023-05-26 15:23:06.981  INFO 12205 --- [27.0.0.1:11211}] net.spy.memcached.MemcachedConnection    : Connection state changed for {QA name=ArcusClient(1-4) for brido /127.0.0.1:11211, #Rops=0, #Wops=1, #iq=0, topRop=null, topWop=net.spy.memcached.protocol.ascii.VersionOperationImpl@4dba0c07, toWrite=0, interested=8}
+2023-05-26 15:23:06.981  INFO 12205 --- [ain-EventThread] net.spy.memcached.ArcusClient            : Arcus client statistics MBean is NOT registered.
+2023-05-26 15:23:06.981  INFO 12205 --- [ain-EventThread] net.spy.memcached.MemcachedConnection    : new memcached node added {QA name=ArcusClient(2-4) for brido /127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2023-05-26 15:23:06.983  INFO 12205 --- [ain-EventThread] net.spy.memcached.ArcusClient            : Arcus client statistics MBean is NOT registered.
+2023-05-26 15:23:06.984  INFO 12205 --- [ed IO for brido] net.spy.memcached.MemcachedConnection    : Connection state changed for {QA name=ArcusClient(2-4) for brido /127.0.0.1:11211, #Rops=0, #Wops=1, #iq=0, topRop=null, topWop=net.spy.memcached.protocol.ascii.VersionOperationImpl@720c29e2, toWrite=0, interested=8}
+2023-05-26 15:23:06.984  INFO 12205 --- [ain-EventThread] net.spy.memcached.MemcachedConnection    : new memcached node added {QA name=ArcusClient(3-4) for brido /127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2023-05-26 15:23:06.986  INFO 12205 --- [ain-EventThread] net.spy.memcached.ArcusClient            : Arcus client statistics MBean is NOT registered.
+2023-05-26 15:23:06.986  INFO 12205 --- [ed IO for brido] net.spy.memcached.MemcachedConnection    : Connection state changed for {QA name=ArcusClient(3-4) for brido /127.0.0.1:11211, #Rops=0, #Wops=1, #iq=0, topRop=null, topWop=net.spy.memcached.protocol.ascii.VersionOperationImpl@26b2651, toWrite=0, interested=8}
+2023-05-26 15:23:06.986  INFO 12205 --- [ain-EventThread] net.spy.memcached.MemcachedConnection    : new memcached node added {QA name=ArcusClient(4-4) for brido /127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2023-05-26 15:23:06.988  INFO 12205 --- [ain-EventThread] net.spy.memcached.ArcusClient            : Arcus client statistics MBean is NOT registered.
+2023-05-26 15:23:06.988  INFO 12205 --- [ed IO for brido] net.spy.memcached.MemcachedConnection    : Connection state changed for {QA name=ArcusClient(4-4) for brido /127.0.0.1:11211, #Rops=0, #Wops=1, #iq=0, topRop=null, topWop=net.spy.memcached.protocol.ascii.VersionOperationImpl@48747c12, toWrite=0, interested=8}
+2023-05-26 15:23:06.988  WARN 12205 --- [ain-EventThread] net.spy.memcached.CacheManager           : All arcus connections are established.
+2023-05-26 15:23:06.990  WARN 12205 --- [           main] c.j.a.a.c.client.ArcusClientWrapper      : Connections with Arcus server are successful.
+2023-05-26 15:23:06.995  WARN 12205 --- [           main] c.j.a.a.c.item.ArcusCacheItemJsonParser  : Not exists "arcusCacheItems.json" file.
+2023-05-26 15:23:07.348  INFO 12205 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2023-05-26 15:23:07.358  INFO 12205 --- [           main] arcus.app.common.basic.BasicApplication  : Started BasicApplication in 3.641 seconds (JVM running for 4.247)
+2023-05-26 15:26:54.072  WARN 12205 --- [ionShutdownHook] c.j.a.a.c.client.ArcusClientWrapper      : Try to disconnect arcus server (address=127.0.0.1:2191, serviceCode=brido, poolSize=4, asyncOperationTimeout=700)
+2023-05-26 15:26:54.074  INFO 12205 --- [telling client)] net.spy.memcached.ArcusClient            : Shut down memcached client
+2023-05-26 15:26:54.075  INFO 12205 --- [ionShutdownHook] net.spy.memcached.CacheManager           : Shut down cache manager.
+2023-05-26 15:26:54.076  INFO 12205 --- [@127.0.0.1:2191] net.spy.memcached.CacheManager           : Close cache manager.
+2023-05-26 15:26:54.077  INFO 12205 --- [telling client)] net.spy.memcached.ArcusClient            : Shut down memcached client
+2023-05-26 15:26:54.077  INFO 12205 --- [@127.0.0.1:2191] net.spy.memcached.CacheManager           : Close the ZooKeeper client. serviceCode=brido, adminSessionId=0x1000001fec50147
+2023-05-26 15:26:54.078  INFO 12205 --- [telling client)] net.spy.memcached.ArcusClient            : Shut down memcached client
+2023-05-26 15:26:54.080  INFO 12205 --- [telling client)] net.spy.memcached.ArcusClient            : Shut down memcached client
+2023-05-26 15:26:54.081  WARN 12205 --- [ionShutdownHook] c.j.a.a.c.client.ArcusClientWrapper      : Disconnections with Arcus server are successful.
+2023-05-26 15:26:54.082  INFO 12205 --- [pool-1-thread-6] c.j.a.a.c.r.ArcusRecachingTaskRunner     : thread has interrupted
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2056) ~[na:na]
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2090) ~[na:na]
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:417) ~[na:na]
+	at com.jam2in.arcus.app.common.recaching.ArcusRecachingTaskRunner.run(ArcusRecachingTaskRunner.java:29) ~[arcus-app-common-2.0.1.jar!/:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+2023-05-26 15:26:54.083  INFO 12205 --- [pool-1-thread-9] c.j.a.a.c.r.ArcusRecachingTaskRunner     : thread has interrupted
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2056) ~[na:na]
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2090) ~[na:na]
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:417) ~[na:na]
+	at com.jam2in.arcus.app.common.recaching.ArcusRecachingTaskRunner.run(ArcusRecachingTaskRunner.java:29) ~[arcus-app-common-2.0.1.jar!/:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+2023-05-26 15:26:54.083  INFO 12205 --- [pool-1-thread-2] c.j.a.a.c.r.ArcusRecachingTaskRunner     : thread has interrupted
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2056) ~[na:na]
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2090) ~[na:na]
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:417) ~[na:na]
+	at com.jam2in.arcus.app.common.recaching.ArcusRecachingTaskRunner.run(ArcusRecachingTaskRunner.java:29) ~[arcus-app-common-2.0.1.jar!/:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+2023-05-26 15:26:54.083  INFO 12205 --- [pool-1-thread-7] c.j.a.a.c.r.ArcusRecachingTaskRunner     : thread has interrupted
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2056) ~[na:na]
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2090) ~[na:na]
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:417) ~[na:na]
+	at com.jam2in.arcus.app.common.recaching.ArcusRecachingTaskRunner.run(ArcusRecachingTaskRunner.java:29) ~[arcus-app-common-2.0.1.jar!/:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+2023-05-26 15:26:54.083  INFO 12205 --- [pool-1-thread-8] c.j.a.a.c.r.ArcusRecachingTaskRunner     : thread has interrupted
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2056) ~[na:na]
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2090) ~[na:na]
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:417) ~[na:na]
+	at com.jam2in.arcus.app.common.recaching.ArcusRecachingTaskRunner.run(ArcusRecachingTaskRunner.java:29) ~[arcus-app-common-2.0.1.jar!/:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
