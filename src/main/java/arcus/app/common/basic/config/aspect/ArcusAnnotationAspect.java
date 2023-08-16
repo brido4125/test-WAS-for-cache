@@ -7,6 +7,10 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 
+
+/*
+* Bean 등록
+* */
 @Aspect
 public class ArcusAnnotationAspect extends ArcusCacheAspect {
     public ArcusAnnotationAspect(ArcusConfiguration arcusConfiguration) {
@@ -16,6 +20,8 @@ public class ArcusAnnotationAspect extends ArcusCacheAspect {
     @Pointcut("execution(* arcus.app.common.basic.*ItemService.findItem(..))))")
     public void findItem() {}
 
+
+    @Override
     @Around("findItem()")
     public Object around(final ProceedingJoinPoint joinPoint) throws Throwable {
         return super.around(joinPoint); }
