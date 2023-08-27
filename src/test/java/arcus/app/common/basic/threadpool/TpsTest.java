@@ -58,4 +58,15 @@ public class TpsTest {
             });
         }
     }
+
+    private final long TPS = 1000;//사용자가 기대하는 WAS의 TPS 값
+    private final double QUERY_TIME = 0.5;//해당 쿼리의 DB Latancy, 단위 second
+    private final double QUERY_RATIO = 0.1;//TX내에서 해당 쿼리가 차지하는 비율
+
+    @Test
+    void tpsFormula() {
+        double maxThreadPoolSize = QUERY_TIME * (TPS * QUERY_RATIO);
+        int i = (int) maxThreadPoolSize;
+        System.out.println("i = " + i);
+    }
 }
