@@ -1,3 +1,5 @@
+*.jar
+
 HELP.md
 .gradle
 build/
