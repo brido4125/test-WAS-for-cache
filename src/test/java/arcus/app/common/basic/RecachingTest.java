@@ -22,7 +22,6 @@ public class RecachingTest {
 
     @BeforeEach
     void setUp() {
-        itemRepository = new ItemRepository();
         itemService = new ItemService(itemRepository);
         itemController = new ItemController(itemService);
 

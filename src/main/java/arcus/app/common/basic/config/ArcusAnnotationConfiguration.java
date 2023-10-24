@@ -1,6 +1,7 @@
 package arcus.app.common.basic.config;
 
 import arcus.app.common.basic.config.aspect.ArcusAnnotationAspect;
+import arcus.app.common.basic.timelog.TimeLogAspect;
 import com.jam2in.arcus.app.common.config.ArcusConfiguration;
 import org.springframework.context.annotation.*;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
@@ -19,5 +20,10 @@ public class ArcusAnnotationConfiguration {
     @Bean
     public ArcusAnnotationAspect arcusAnnotationAspect() {
         return new ArcusAnnotationAspect(arcusConfiguration);
+    }
+
+    @Bean
+    public TimeLogAspect timeLogAspect() {
+        return new TimeLogAspect();
     }
 }

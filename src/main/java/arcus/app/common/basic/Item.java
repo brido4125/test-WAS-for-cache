@@ -1,9 +1,15 @@
 package arcus.app.common.basic;
 
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.io.Serializable;
 
+@Entity
+@NoArgsConstructor
 public class Item implements Serializable {
-    private Long id;
+    @Id private Long id;
     private int price;
     private String name;
 
