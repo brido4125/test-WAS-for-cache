@@ -20,8 +20,10 @@ public class TimeLogAspect {
     Object[] args = joinPoint.getArgs();
     Object result = joinPoint.proceed();
     long end = System.currentTimeMillis();
-    log.info("[Trace] {}, [args] {}", joinPoint.getSignature(), args);
-    log.info("[Total Time] = {} ms ", end - start);
+    if (end - start > 100) {
+      log.info("[Trace] {}, [args] {}", joinPoint.getSignature(), args);
+      log.info("[Total Time] = {} ms ", end - start);
+    }
     return result;
   }
 }

@@ -23,7 +23,7 @@ public class ItemController {
 
     @Trace
     @GetMapping("/item/{id}")
-    public String getItem(@PathVariable("id") Long id) {
+    public String getItem(@PathVariable("id") Long id) throws InterruptedException {
         Item item = itemService.findItem(id);
         return item.getName();
     }

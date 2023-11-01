@@ -6,6 +6,8 @@ import com.jam2in.arcus.app.common.aop.ArcusCacheKey;
 import com.jam2in.arcus.app.common.key.ArcusCacheKeyDate;
 import com.jam2in.arcus.app.common.recaching.ArcusRecachingType;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mapping.PersistentEntity;
+import org.springframework.data.mapping.context.MappingContext;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,8 +26,9 @@ public class ItemService {
 
     @Trace
     @ArcusCache(keyDate = ArcusCacheKeyDate.KEY_DATE_DAY, expireTime = "30", recachingType = ArcusRecachingType.SUS)
-    public Item findItem(@ArcusCacheKey Long id) {
-      return itemRepository.findById(id).orElseThrow(IllegalAccessError::new);
+    public Item findItem(@ArcusCacheKey Long id) throws InterruptedException {
+        Thread.sleep(300);
+        return itemRepository.findById(id).orElseThrow(IllegalAccessError::new);
     }
 
     @Transactional

@@ -16,7 +16,7 @@ public class ItemServiceTest {
   private ItemService itemService;
 
   @Test
-  void updateData() {
+  void updateData() throws InterruptedException {
     //given
     itemService.saveItem(new Item(1L, 1000, "pro"));
 
