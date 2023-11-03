@@ -13,6 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Random;
 
 @Service
 public class ItemService {
@@ -25,9 +27,9 @@ public class ItemService {
 
 
     @Trace
-    @ArcusCache(keyDate = ArcusCacheKeyDate.KEY_DATE_DAY, expireTime = "30", recachingType = ArcusRecachingType.SUS)
+    @ArcusCache(keyDate = ArcusCacheKeyDate.KEY_DATE_DAY, expireTime = "60", recachingType = ArcusRecachingType.NONE)
     public Item findItem(@ArcusCacheKey Long id) throws InterruptedException {
-        Thread.sleep(300);
+        Thread.sleep(100);
         return itemRepository.findById(id).orElseThrow(IllegalAccessError::new);
     }
 
