@@ -3,7 +3,6 @@ package arcus.app.common.basic;
 import com.jam2in.arcus.app.common.aop.ArcusCache;
 import com.jam2in.arcus.app.common.aop.ArcusCacheKey;
 import com.jam2in.arcus.app.common.key.ArcusCacheKeyDate;
-import com.jam2in.arcus.app.common.recaching.ArcusRecachingType;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -15,14 +14,10 @@ public class ItemService {
         this.itemRepository = itemRepository;
     }
 
-    @ArcusCache(keyDate = ArcusCacheKeyDate.KEY_DATE_DAY, expireTime = "10", recachingType = ArcusRecachingType.SUS)
+    @ArcusCache(keyDate = ArcusCacheKeyDate.KEY_DATE_DAY, expireTime = "10")
     public Item findItem(@ArcusCacheKey Long id) {
-        System.out.println("ItemService.findItem 로직 호출");
-        Item find = itemRepository.findById(id);
-        System.out.println("find.getName() = " + find.getName());
-        return find;
+      return itemRepository.findById(id).get();
     }
-
 
     public Item saveItem(Item item) {
         itemRepository.save(item);

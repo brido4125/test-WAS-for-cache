@@ -1,9 +1,6 @@
 package arcus.app.common.basic;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -22,7 +19,6 @@ public class RecachingTest {
 
     @BeforeEach
     void setUp() {
-        itemRepository = new ItemRepository();
         itemService = new ItemService(itemRepository);
         itemController = new ItemController(itemService);
 

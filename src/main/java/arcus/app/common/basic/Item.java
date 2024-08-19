@@ -1,8 +1,12 @@
 package arcus.app.common.basic;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.io.Serializable;
 
+@Entity
 public class Item implements Serializable {
+    @Id
     private Long id;
     private int price;
     private String name;
@@ -12,6 +16,8 @@ public class Item implements Serializable {
         this.price = price;
         this.name = name;
     }
+
+    public Item() {}
 
     public Long getId() {
         return id;

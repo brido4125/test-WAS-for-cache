@@ -3,7 +3,6 @@ package arcus.app.common.basic.config;
 import arcus.app.common.basic.config.aspect.ArcusAnnotationAspect;
 import com.jam2in.arcus.app.common.config.ArcusConfiguration;
 import org.springframework.context.annotation.*;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 //
 @Configuration
 @Import(ArcusConfiguration.class)

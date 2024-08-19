@@ -9,6 +9,7 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 repositories {
+	mavenLocal()
 	mavenCentral()
 }
 
@@ -17,8 +18,7 @@ dependencies {
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-	// https://mvnrepository.com/artifact/com.navercorp.arcus/arcus-java-client
-	implementation group: 'com.navercorp.arcus', name: 'arcus-java-client', version: '1.13.2'
+	implementation 'com.brido:arcus-java-client:1.13.4'
 
 	// https://mvnrepository.com/artifact/net.sf.ehcache/ehcache-core
 	implementation group: 'net.sf.ehcache', name: 'ehcache-core', version: '2.6.0'
@@ -33,7 +33,7 @@ dependencies {
 	implementation group: 'io.netty', name: 'netty', version: '3.10.6.Final'
 
 	// https://mvnrepository.com/artifact/log4j/log4j
-	implementation group: 'log4j', name: 'log4j', version: '1.2.16'
+//	implementation group: 'log4j', name: 'log4j', version: '1.2.16'
 
 	// https://mvnrepository.com/artifact/org.slf4j/slf4j-api
 	implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
@@ -52,7 +52,16 @@ dependencies {
 
 
 	//arcus-app-common
-	implementation files('libs/arcus-app-common-2.0.1.jar')
+	implementation files('libs/arcus-app-common-2.1.0.jar')
+
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	// https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
+	implementation group: 'com.mysql', name: 'mysql-connector-j', version: '8.0.33'
+
+
+
+//	implementation 'org.springframework.boot:spring-boot-starter-web:2.7.2'
 
 }
 
